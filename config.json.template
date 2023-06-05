@@ -1,11 +1,10 @@
 {
   "replicate_api_token": "YOUR API TOKEN",
-  "translate_prompt": false,
   "defaults": {
-    "model": "cjwbw/anything-v3-better-vae",
-    "version": "09a5805203f4c12da649ec1923bb7729517ca25fcac790e640eaa9ed66573b65",
+    "model": "stability-ai/stable-diffusion",
+    "version": "db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf",
     "negative_prompt": "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name",
-    "prompt": "masterpiece, best quality, illustration, beautiful detailed, finely detailed, dramatic light, intricate details"
+    "prompt": "best quality"
   },
   "rules": [
     {
@@ -89,6 +88,33 @@
     },
     {
       "keywords": [
+        "脸谱",
+        "sam"
+      ],
+      "params": {
+        "model": "yuval-alaluf/sam",
+        "version": "9222a21c181b707209ef12b5e0d7e94c994b58f01c7b2fec075d2e892362f13c",
+        "image": "image",
+        "target_age": "default"
+      },
+      "desc": "画人像脸谱"
+    },
+    {
+      "keywords": [
+        "中有什么",
+        "?",
+        "？"
+      ],
+      "params": {
+        "model": " salesforce/blip",
+        "version": "2e1dddc8621f72155f24cf2e0adbde548458d3cab9f00c0139eea840d0ac4746",
+        "image": "image",
+        "task": "image_captioning"
+      },
+      "desc": "解释图片信息"
+    },
+    {
+      "keywords": [
         "open",
         "openjourney"
       ],
@@ -101,18 +127,6 @@
         "guidance_scale": 7
       },
       "desc": "使用openjourney模型出图"
-    },
-    {
-      "keywords": [
-        "去除模糊"
-      ],
-      "params": {
-        "model": "google-research/maxim",
-        "version": "494ca4d578293b4b93945115601b6a38190519da18467556ca223d219c3af9f9",
-        "_model": "Image Deblurring (GoPro)",
-        "image": "image"
-      },
-      "desc": "去除运动模糊"
     }
   ]
 }
